@@ -75,7 +75,7 @@ Router.route('/api/stream/new', { where: 'server' })
     }
 
     Streams.insert({
-        _id: id,
+        stream_id: id,
         job_id: job_id,
         title:title,
         xName:xName,
@@ -95,7 +95,7 @@ Router.route('/api/stream/append', { where: 'server' })
     var x = query.x;
     var y = query.y;
 
-    var writeResult = Streams.update({_id: id,job_id:job_id},
+    var writeResult = Streams.update({plot_id: id,job_id:job_id},
       {$push:{values: {x:x,y:y,ts:Date.now()}}});
 
     if (writeResult.nMatched === 0) {
