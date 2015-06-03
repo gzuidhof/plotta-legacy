@@ -3,7 +3,7 @@ Router.route('/', function () {
 });
 
 Router.route('/job/:job_id', function() {
-  var job = Jobs.find({_id:this.params.job_id});
+  var job = Jobs.findOne({_id:this.params.job_id});
   this.render('job', {data:job});
 
 });
