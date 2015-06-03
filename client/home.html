@@ -1,0 +1,26 @@
+<template name="home">
+  Hallo?
+
+  {{#each allJobs}}
+
+  <b>
+    Job ID: {{_id}}
+    Name: {{name}}
+    Node: {{node}}
+    Status: {{status}}
+    StartTime: {{startTime}}
+    endTime: {{endTime}}
+  </b>
+  <br>
+
+  <i>STREAMS:</i><br>
+    {{#each streamsForJobId _id}}
+      {{>plot this}}<br>
+    {{/each}}
+
+  <br>
+  {{/each}}
+
+
+
+</template>

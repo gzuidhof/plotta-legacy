@@ -1,0 +1,10 @@
+<template name="plot">
+  Title: {{name}}
+  xName: {{xName}}
+  yName: {{yName}}
+
+  {{#each values}}
+    <br>{{ts}}: {{x}}, {{y}}
+  {{/each}}
+
+</template>
