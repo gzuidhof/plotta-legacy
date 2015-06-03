@@ -17,7 +17,7 @@ Router.err = function(response, reason) {
 
 Router.route('/api/job/new', {where: 'server'})
   .post(function () {
-    var query = this.params.query;
+    var query = this.request.body
     var name = query.name;
     var id = query.id;
     var node = query.node;
@@ -40,7 +40,7 @@ Router.route('/api/job/new', {where: 'server'})
 
 Router.route('/api/job/stop', { where: 'server' })
   .post(function () {
-    var query = this.params.query;
+    var query = this.request.body
     var id = query.id;
 
 
@@ -57,7 +57,7 @@ Router.route('/api/job/stop', { where: 'server' })
 
 Router.route('/api/stream/new', { where: 'server' })
   .post(function () {
-    var query = this.params.query;
+    var query = this.request.body
     var id = query.id;
     var job_id = query.job_id;
     var title = query.title;
@@ -89,7 +89,7 @@ Router.route('/api/stream/new', { where: 'server' })
 
 Router.route('/api/stream/append', { where: 'server' })
   .post(function () {
-    var query = this.params.query;
+    var query = this.request.body
     var id = query.id;
     var job_id = query.job_id;
     var x = query.x;
