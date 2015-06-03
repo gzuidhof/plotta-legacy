@@ -1,22 +1,10 @@
 <template name="home">
+
+
+
+
   {{#each allJobs}}
-
-  <b>
-    Job ID: {{_id}}
-    Name: {{name}}
-    Node: {{node}}
-    Status: {{status}}
-    StartTime: {{startTime}}
-    endTime: {{endTime}}
-  </b>
-  <br>
-
-  <i>STREAMS:</i><br>
-    {{#each streamsForJobId _id}}
-      {{>plot this}}<br>
-    {{/each}}
-
-  <br>
+  <a class="btn" href="/job/{{_id}}">{{name}} on {{node}}</a>
   {{/each}}
 
 

@@ -1,0 +1,13 @@
+<template name="job">
+  Job ID: {{_id}}
+  Name: {{name}}
+  Node: {{node}}
+  Status: {{status}}
+  StartTime: {{startTime}}
+  endTime: {{endTime}}
+
+  {{#each streamsForJobId _id}}
+    {{>plot this}}<br>
+  {{/each}}
+
+</template>

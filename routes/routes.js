@@ -2,6 +2,13 @@ Router.route('/', function () {
   this.render('home');
 });
 
+Router.route('/job/:job_id', function() {
+  var job = Jobs.find({_id:this.params.job_id});
+  this.render('job', {data:job});
+
+});
+
+
 
 /* REST API */
 
