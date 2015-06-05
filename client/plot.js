@@ -4,7 +4,9 @@ Template.plot.onRendered (function(a) {
   var values = (this.data ? this.data.values: []) ? this.data.values: [];
   var plotElement = this.find('.plot');
 
-  var plotData = {key: this.data.title, values: values};
+  var title = this.data.title + '(' + this.data._id + ')';
+
+  var plotData = {key: title, values: values};
   var xAxisName = this.data.xAxis;
   var yAxisName = this.data.yAxis;
 
