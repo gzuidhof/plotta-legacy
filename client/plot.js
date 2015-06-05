@@ -2,10 +2,13 @@
 Template.plot.onRendered (function(a) {
 
   var values = (this.data ? this.data.values: []) ? this.data.values: [];
-  var plotElement = this.find('.plot');
-  console.log(this)
-  var title = this.data.title;
 
+  if (!this.plotElement) {
+         this.plotElement = this.find('.plot');
+  };
+  var plotElement = this.plotElement;
+  
+  var title = this.data.title;
   var plotData = {key: title, values: values};
   var xAxisName = this.data.xAxis;
   var yAxisName = this.data.yAxis;
