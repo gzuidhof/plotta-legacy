@@ -3,7 +3,7 @@ Webserver for live plots of distributed tasks
 
 
 ###Preliminary REST API
-All requests below POST requests.
+All requests below are POST requests.
 
 ####Create new job
 ```
