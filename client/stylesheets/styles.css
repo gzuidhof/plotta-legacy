@@ -130,9 +130,11 @@ a {
 
 }
 .job-item:hover {
-    background-color: AliceBlue;
+    background-color: #F5FBFF;
 }
-
+.job-item-running:hover{
+  background-color: #D8FFD5;
+}
 
     .job-avatar {
         border-radius: 3px;
@@ -157,7 +159,7 @@ a {
 }
 .job-item-running {
     border-left: 7px solid #56F326;
-    color: #000;
+    color: #333;
 }
 
 /* Job Content Styles */
