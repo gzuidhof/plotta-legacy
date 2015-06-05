@@ -126,6 +126,7 @@ a {
     border-bottom: 1px solid #ddd;
     border-left: 6px solid transparent;
     cursor: pointer;
+    color: #888;
 
 }
 .job-item:hover {
@@ -155,7 +156,8 @@ a {
     background: #f2f2f2;
 }
 .job-item-running {
-    border-left: 6px solid #1b98f8;
+    border-left: 7px solid #56F326;
+    color: #000;
 }
 
 /* Job Content Styles */
