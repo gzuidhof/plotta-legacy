@@ -1,13 +1,20 @@
 <template name="job">
-  Job ID: {{_id}}
-  Name: {{name}}
-  Node: {{node}}
-  Status: {{status}}
-  StartTime: {{startTime}}
-  endTime: {{endTime}}
 
-  {{#each streamsForJobId _id}}
-    {{>plot this}}<br>
-  {{/each}}
+      {{>jobHeader}}
+
+    <div class="email-content-body">
+      Job ID: {{_id}}
+      Name: {{name}}
+      Node: {{node}}
+      Status: {{status}}
+      StartTime: {{startTime}}
+      endTime: {{endTime}}
+
+      {{#each streamsForJobId _id}}
+        {{>plot this}}<br>
+      {{/each}}
+    </div>
+
+
 
 </template>

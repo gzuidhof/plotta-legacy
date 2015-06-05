@@ -1,0 +1,14 @@
+<template name="base">
+  <div id="layout" class="content pure-g">
+      {{>nav}}
+      {{>jobList}}
+
+
+
+      <div id="main" class="pure-u-1">
+          <div class="job-content">
+              {{>yield}}
+          </div>
+      </div>
+  </div>
+</template>

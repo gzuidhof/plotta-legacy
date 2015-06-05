@@ -1,0 +1,17 @@
+<template name="jobHeader">
+  <div class="job-content-header pure-g">
+      <div class="pure-u-1-2">
+          <h1 class="job-content-title">{{name}}</h1>
+          <p class="job-content-subtitle">
+            <span>{{_id}}</span>
+              on <a>{{node}}</a> started <span>{{localizedDateAndTime startTime}}</span>
+          </p>
+      </div>
+
+      <div class="job-content-controls pure-u-1-2">
+          <button class="secondary-button pure-button">View</button>
+          <button class="secondary-button pure-button">Stop</button>
+      </div>
+  </div>
+
+</template>

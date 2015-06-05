@@ -1,0 +1,19 @@
+<template name="nav">
+  <div id="nav" class="pure-u {{#if isActive}}active{{/if}}">
+      <a href="#" class="nav-menu-button">Menu</a>
+
+      <div class="nav-inner">
+          <a href="/"><h1 class="nav-title">Plotta</h1></a>
+
+          <div class="pure-menu">
+              <ul class="pure-menu-list">
+                  <li class="pure-menu-item"><a href="#" class="pure-menu-link">Jobs <span class="job-count">({{allJobs.count}})</span></a></li>
+                  <li class="pure-menu-heading">Filter</li>
+                  <li class="pure-menu-item"><a href="#" class="pure-menu-link">All</a></li>
+                  <li class="pure-menu-item"><a href="#" class="pure-menu-link">Running</a></li>
+                  <li class="pure-menu-item"><a href="#" class="pure-menu-link">Completed</a></li>
+              </ul>
+          </div>
+      </div>
+  </div>
+</template>
