@@ -2,7 +2,7 @@
 Template.plot.onRendered (function(a) {
 
   var values = (this.data ? this.data.values: []) ? this.data.values: [];
-  var plotElement = this.find('.plot');
+  var plotElement = this.find(this.data.stream_id + '-plot');
 
   var title = this.data.title;
 
