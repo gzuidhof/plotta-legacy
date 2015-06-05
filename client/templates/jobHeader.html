@@ -9,8 +9,13 @@
       </div>
 
       <div class="job-content-controls pure-u-1-2">
-          <button class="secondary-button pure-button">View</button>
-          <button class="secondary-button pure-button">Stop</button>
+          <button class="secondary-button pure-button toggle-job">
+            {{#if equals status 0}}
+            Start
+            {{else}}
+            Stop
+            {{/if}}
+          </button>
       </div>
   </div>
 
