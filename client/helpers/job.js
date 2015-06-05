@@ -1,5 +1,5 @@
 Template.registerHelper('allJobs', function() {
-  return Jobs.find({});
+  return Jobs.find({},{sort:{startTime:-1}});
 });
 
 Template.registerHelper('streamsForJobId', function(id) {
