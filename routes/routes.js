@@ -79,7 +79,7 @@ Router.route('/api/stream/new', { where: 'server' })
       return
     }
 
-    else if(Streams.findOne({_id:id, job_id: job_id})) {
+    else if(Streams.findOne({stream_id:stream_id, job_id: job_id})) {
       Router.err(this.response,'Job with this id and job_id already exists!');
       return;
     }
