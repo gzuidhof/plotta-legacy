@@ -113,7 +113,7 @@ a {
 
 
 /*
- * -- EMAIL STYLES --
+ * -- JOB STYLES --
  * Styles relevant to the job messages, labels, counts, and more.
  */
 .job-count {
@@ -130,7 +130,7 @@ a {
 
 }
 .job-item:hover {
-    background-color: #F5FBFF;
+    background-color: #FAFAFF;
 }
 .job-item-running:hover{
   background-color: #D8FFD5;
@@ -172,6 +172,7 @@ a {
 
         .job-content-title {
             margin: 0.5em 0 0;
+            word-wrap: break-word;
         }
         .job-content-subtitle {
             font-size: 1em;
