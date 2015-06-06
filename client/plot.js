@@ -10,12 +10,12 @@ Template.plot.onRendered (function(a) {
 
   var title = this.data.title;
 
-
+/*
   //Mock data
   values = _.map(_.range(150), function(i) {
     return {x:i,y:+Math.sin(0.2*i)};
   });
-
+*/
   var plotData = {key: title, values: values};
   var xAxisName = this.data.xAxis;
   var yAxisName = this.data.yAxis;
