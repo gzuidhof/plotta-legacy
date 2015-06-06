@@ -10,19 +10,18 @@ Template.plot.onRendered (function(a) {
 
   var title = this.data.title;
 
-/*
+
   //Mock data
   values = _.map(_.range(150), function(i) {
     return {x:i,y:+Math.sin(0.2*i)};
   });
-*/
-  console.log(values)
+
   var plotData = {key: title, values: values};
   var xAxisName = this.data.xAxis;
   var yAxisName = this.data.yAxis;
 
   nv.addGraph(function() {
-    var chart = nv.models.lineChart();
+    var chart = nv.models.lineWithFocusChart();
 
     chart.xAxis
         .tickFormat(d3.format(',f'))
@@ -32,6 +31,8 @@ Template.plot.onRendered (function(a) {
         .tickFormat(d3.format(',.2f'))
         .axisLabel(yAxisName);
 
+    chart.y2Axis
+        .tickFormat(d3.format(',.2f'));
 
     d3.select(plotElement)
         .datum([plotData])
