@@ -16,12 +16,13 @@ Template.plot.onRendered (function(a) {
     return {x:i,y:+Math.sin(0.2*i)};
   });
 */
+
   var plotData = {key: title, values: values};
   var xAxisName = this.data.xAxis;
   var yAxisName = this.data.yAxis;
 
   nv.addGraph(function() {
-    var chart = nv.models.lineWithFocusChart();
+    var chart = nv.models.lineChart();
 
     chart.xAxis
         .tickFormat(d3.format(',f'))
@@ -31,12 +32,10 @@ Template.plot.onRendered (function(a) {
         .tickFormat(d3.format(',.2f'))
         .axisLabel(yAxisName);
 
-    chart.y2Axis
-        .tickFormat(d3.format(',.2f'));
 
     d3.select(plotElement)
         .datum([plotData])
-        .transition().duration(500)
+        .transition().duration(100)
         .call(chart);
 
     nv.utils.windowResize(chart.update);
