@@ -13,6 +13,13 @@
       {{#each streamsForJobId _id}}
         {{>plot this}}<br>
       {{/each}}
+
+      {{#each streamsForJobId _id}}
+        {{#each values}}
+          <i>({{localizedDateAndTime ts}})</i> {{x}} <b>{{y}}</b><br>
+        {{/each}}
+      {{/each}}
+      
     </div>
 
 
