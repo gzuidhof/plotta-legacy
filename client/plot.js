@@ -16,7 +16,7 @@ Template.plot.onRendered (function(a) {
     return {x:i,y:+Math.sin(0.2*i)};
   });
 */
-
+  console.log(values)
   var plotData = {key: title, values: values};
   var xAxisName = this.data.xAxis;
   var yAxisName = this.data.yAxis;
