@@ -1,14 +1,33 @@
+Template.plot.helpers({
+  updatePlot: function() {
 
-Template.plot.onRendered (function(a) {
+    if (Template.instance().updatePlot) {
+      Template.instance().updatePlot(this.values);
+    }
 
-  var values = (this.data ? this.data.values: []) ? this.data.values: [];
+    return 'Last update '+new Date();
 
-  if (!this.plotElement) {
-         this.plotElement = this.find('.plot');
+  }
+});
+
+
+Template.plot.onRendered (function() {
+
+  var stream = this.data;
+
+  if (!stream) {
+    return;
+  }
+
+  var values = stream ? stream.values: [];
+
+  if (!stream.plotElement) {
+    stream.plotElement = this.find('.plot');
   };
-  var plotElement = this.plotElement;
+  var plotElement = stream.plotElement;
 
-  var title = this.data.title;
+  //console.log('awrooo');
+  var title = stream.title;
 
 /*
   //Mock data
@@ -17,12 +36,11 @@ Template.plot.onRendered (function(a) {
   });
 */
   var plotData = {key: title, values: values};
-  var xAxisName = this.data.xAxis;
-  var yAxisName = this.data.yAxis;
+  var xAxisName = stream.xAxis;
+  var yAxisName = stream.yAxis;
 
-  nv.addGraph(function() {
+  var createGraph = function(plotData) {
     var chart = nv.models.lineWithFocusChart();
-
     chart.xAxis
         .tickFormat(d3.format(',f'))
         .axisLabel(xAxisName);
@@ -40,7 +58,21 @@ Template.plot.onRendered (function(a) {
         .call(chart);
 
     nv.utils.windowResize(chart.update);
-
+    chart.update();
     return chart;
-  });
+  }
+
+  nv.addGraph(function(){createGraph(plotData)});
+
+  var update = function(values) {
+  //  console.log("updated!" + values.length);
+
+    var plotData = {key: title, values: values};
+    nv.addGraph(function(){createGraph(plotData)});
+    return title;
+  }
+
+  this.updatePlot = update;
+
+
 });
