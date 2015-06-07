@@ -41,7 +41,6 @@ Template.plot.onRendered (function() {
 
   var chart = nv.models.lineWithFocusChart();
 
-
   nv.addGraph(function() {
     chart.xAxis
         .tickFormat(d3.format(',f'))
@@ -56,14 +55,11 @@ Template.plot.onRendered (function() {
 
     d3.select(plotElement)
         .datum([plotData])
-        .transition().duration(100)
         .call(chart);
 
     nv.utils.windowResize(chart.update);
-    chart.update();
     return chart;
   });
-
 
   var update = function(values) {
   //  console.log("updated!" + values.length);
@@ -72,7 +68,6 @@ Template.plot.onRendered (function() {
 
     d3.select(plotElement)
         .datum([plotData])
-        .transition().duration(100)
         .call(chart);
 
     return title;
