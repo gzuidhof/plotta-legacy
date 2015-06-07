@@ -1,19 +1,20 @@
 Meteor.methods({
   'fixOldData': function() {
-    var jobs = Jobs.find({}).fetch();
-    _.each(jobs, function(job) {
-      var id = job._id;
+    var streams = Streams.find({}).fetch();
+    _.each(streams, function(stream) {
+      var id = stream._id;
 
-      newValues = _.map(job.values, function(val) {
+      newValues = _.map(stream.values, function(val) {
         val.x = parseFloat(val.x);
         val.y = parseFloat(val.y);
         return val;
       });
 
-      Jobs.update({_id:id}, {$set: {values: newValues}});
+      Streams.update({_id:id}, {$set: {values: newValues}});
+      console.log("Updated stream " + stream.title + " of job " +stream.job_id);
     });
 
-
+    console.log("Updating stream values done!");
   }
 
 
