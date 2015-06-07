@@ -5,6 +5,9 @@
           <p class="job-content-subtitle">
             <span>{{_id}}</span>
               on <a href="{{linkForNode}}">{{node}}</a> started <span>{{localizedDateAndTime startTime}}</span>
+              {{#if endTime}}
+               ended <span>{{localizedDateAndTime endTime}}</span>
+              {{/if}}
           </p>
       </div>
 

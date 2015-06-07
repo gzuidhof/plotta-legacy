@@ -89,15 +89,15 @@ Router.route('/api/stream/append', { where: 'server' })
     var query = this.request.body
     var id = query.id;
     var job_id = query.job_id;
-    var x = query.x;
-    var y = query.y;
+    var x = parseFloat(query.x);
+    var y = parseFloat(query.y);
 
     var writeResult = Streams.update({stream_id: id,job_id:job_id},
       {$push:{values: {x:x,y:y,ts:Date.now()}}});
 
     if (writeResult.nMatched === 0) {
         Router.err(this.response,"Data append attempt, " +
-          "but no plot found for id " + id);
+          "but no stream found for id " + id);
         return;
     }
     this.response.end('');

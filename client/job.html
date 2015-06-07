@@ -3,12 +3,9 @@
       {{>jobHeader}}
 
     <div class="job-content-body">
-      Job ID: {{_id}}
-      Name: {{name}}
-      Node: {{node}}
-      Status: {{status}}
-      StartTime: {{startTime}}
-      endTime: {{endTime}}
+      {{#if endTime}}
+      endTime: {{localizedDateAndTime endTime}}
+      {{/if}}
 
       {{#each streamsForJobId _id}}
         {{>plot this}}<br>

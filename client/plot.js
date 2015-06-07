@@ -39,8 +39,10 @@ Template.plot.onRendered (function() {
   var xAxisName = stream.xAxis;
   var yAxisName = stream.yAxis;
 
-  var createGraph = function(plotData) {
-    var chart = nv.models.lineWithFocusChart();
+  var chart = nv.models.lineWithFocusChart();
+
+
+  nv.addGraph(function() {
     chart.xAxis
         .tickFormat(d3.format(',f'))
         .axisLabel(xAxisName);
@@ -60,15 +62,19 @@ Template.plot.onRendered (function() {
     nv.utils.windowResize(chart.update);
     chart.update();
     return chart;
-  }
+  });
 
-  nv.addGraph(function(){createGraph(plotData)});
 
   var update = function(values) {
   //  console.log("updated!" + values.length);
 
     var plotData = {key: title, values: values};
-    nv.addGraph(function(){createGraph(plotData)});
+
+    d3.select(plotElement)
+        .datum([plotData])
+        .transition().duration(100)
+        .call(chart);
+
     return title;
   }
 
