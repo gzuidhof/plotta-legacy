@@ -97,18 +97,29 @@ a {
     border: none;
     text-align: left;
 }
-    #nav .pure-menu-link:hover,
-    #nav .pure-menu-link:focus {
-        background: rgb(55, 60, 90);
+
+    #nav .pure-menu-link:hover {
+      background: rgb(61, 61, 61);
     }
+    #nav .pure-menu-link:focus {
+        background: inherit;
+    }
+
     #nav .pure-menu-link {
         color: #fff;
         margin-left: 0.5em;
     }
+
+    #nav .pure-menu-selected {
+        color: #949494;
+        background: rgb(40, 40, 40);
+
+    }
+
     #nav .pure-menu-heading {
         border-bottom: none;
         font-size:110%;
-        color: rgb(75, 113, 151);
+        color: rgb(119, 119, 119);
     }
 
 
@@ -117,7 +128,7 @@ a {
  * Styles relevant to the job messages, labels, counts, and more.
  */
 .job-count {
-    color: rgb(75, 113, 151);
+    color: rgb(61, 136, 71);
 }
 
 /* Job Item Styles */

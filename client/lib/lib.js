@@ -18,3 +18,5 @@ Constants.COMA_LINKS =
             _.range(1136,1139))),
         function(id){return 'http://graphs.science.ru.nl/graph_view.php?action=tree&tree_id=15&leaf_id='+id})
 );
+
+Session.setDefault('jobFilter', [0,1,2,3,4,5]);

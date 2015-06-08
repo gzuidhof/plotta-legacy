@@ -9,9 +9,8 @@
               <ul class="pure-menu-list">
                   <li class="pure-menu-item"><a href="#" class="pure-menu-link">Jobs <span class="job-count">({{allJobs.count}})</span></a></li>
                   <li class="pure-menu-heading">Filter</li>
-                  <li class="pure-menu-item"><a href="#" class="pure-menu-link">All</a></li>
-                  <li class="pure-menu-item"><a href="#" class="pure-menu-link">Running</a></li>
-                  <li class="pure-menu-item"><a href="#" class="pure-menu-link">Completed</a></li>
+                  <li class="pure-menu-item filter-running {{#if isFiltered 0}}pure-menu-selected{{/if}}"><a href="#" class="pure-menu-link">Running</a></li>
+                  <li class="pure-menu-item filter-finished {{#if isFiltered 1}}pure-menu-selected{{/if}}"><a href="#" class="pure-menu-link">Finished</a></li>
               </ul>
           </div>
       </div>
