@@ -112,7 +112,8 @@ a {
 
     #nav .pure-menu-selected {
         color: #949494;
-        background: rgb(40, 40, 40);
+        font-weight: bold;
+        background: rgb(47, 73, 34);
 
     }
 
