@@ -3,7 +3,7 @@ Template.registerHelper('allJobs', function() {
 });
 
 Template.registerHelper('streamsForJobId', function(id) {
-  return Streams.find({job_id: id});
+  return Streams.find({job_id: id}, {sort:{title:1}});
 });
 
 Template.registerHelper('isFiltered', function(status) {
