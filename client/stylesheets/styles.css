@@ -178,6 +178,11 @@ a {
 .job-content-header, .job-content-body, .job-content-footer {
     padding: 1em 2em;
 }
+
+    .job-content-body{
+      max-width:1000px;
+    }
+
     .job-content-header {
         border-bottom: 1px solid #ddd;
     }
@@ -284,5 +289,6 @@ a {
         position: static;
         margin: 0;
         padding: 0;
+        width:100%;
     }
 }
