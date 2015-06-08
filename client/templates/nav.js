@@ -9,7 +9,7 @@ Template.nav.events = {
       Session.set('jobFilter', _.union(currentFilter,0));
     }
     else {
-      Session.set('jobFilter', []);
+      Session.set('jobFilter', _.without(currentFilter,0));
     }
   },
 
