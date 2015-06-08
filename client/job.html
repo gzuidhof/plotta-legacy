@@ -3,10 +3,7 @@
       {{>jobHeader}}
 
     <div class="job-content-body">
-      {{#if endTime}}
-      endTime: {{localizedDateAndTime endTime}}
-      {{/if}}
-
+      
       {{#each streamsForJobId _id}}
         {{>plot this}}<br>
         <hr>
