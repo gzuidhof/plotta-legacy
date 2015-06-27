@@ -5,8 +5,6 @@ Template.plot.helpers({
       Template.instance().updatePlot(this.values);
     }
 
-    //return 'Last update '+new Date();
-
   }
 });
 
@@ -26,15 +24,7 @@ Template.plot.onRendered (function() {
   };
   var plotElement = stream.plotElement;
 
-  //console.log('awrooo');
   var title = stream.title;
-
-/*
-  //Mock data
-  values = _.map(_.range(150), function(i) {
-    return {x:i,y:+Math.sin(0.2*i)};
-  });
-*/
   var plotData = {key: title, values: values};
   var xAxisName = stream.xAxis;
   var yAxisName = stream.yAxis;
@@ -62,7 +52,6 @@ Template.plot.onRendered (function() {
   });
 
   var update = function(values) {
-  //  console.log("updated!" + values.length);
 
     var plotData = {key: title, values: values};
 
