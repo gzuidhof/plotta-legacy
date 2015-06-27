@@ -5,7 +5,7 @@ Template.plot.helpers({
       Template.instance().updatePlot(this.values);
     }
 
-    return 'Last update '+new Date();
+    //return 'Last update '+new Date();
 
   }
 });
