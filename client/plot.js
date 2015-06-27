@@ -37,11 +37,11 @@ Template.plot.onRendered (function() {
         .axisLabel(xAxisName);
 
     chart.yAxis
-        .tickFormat(d3.format(',.2f'))
+        .tickFormat(d3.format(',.3f'))
         .axisLabel(yAxisName);
 
     chart.y2Axis
-        .tickFormat(d3.format(',.2f'));
+        .tickFormat(d3.format(',.3f'));
 
     d3.select(plotElement)
         .datum([plotData])
