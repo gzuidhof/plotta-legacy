@@ -1,4 +1,5 @@
 Meteor.methods({
+  //Used for fixing string values in plots
   'fixOldData': function() {
     var streams = Streams.find({}).fetch();
     _.each(streams, function(stream) {
@@ -15,6 +16,19 @@ Meteor.methods({
     });
 
     console.log("Updating stream values done!");
+  },
+  
+  //Used for migrating to new api (with more explicit id names)
+  'fixOldIds': function() {
+    var jobs = Jobs.find({}).fetch();
+    _.each(jobs, function(job) {
+      var id = job._id;
+
+      Jobs.update({_id:id}, {$set: {job_id: id}});
+      console.log("Updated job " + job.name);
+    });
+
+    console.log("Updating job ids done!");
   }
 
 

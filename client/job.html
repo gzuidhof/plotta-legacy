@@ -3,8 +3,8 @@
       {{>jobHeader}}
 
     <div class="job-content-body">
-      
-      {{#each streamsForJobId _id}}
+
+      {{#each streamsForJobId job_id}}
         {{>plot this}}<br>
         <hr>
       {{/each}}

@@ -6,7 +6,7 @@ Template.jobList.helpers({
 
 Template.jobList.events = {
   "click .job-item": function(event, template) {
-    var job_id = this._id;
+    var job_id = this.job_id;
     Router.go('/job/'+job_id);
   }
 

@@ -2,6 +2,7 @@ Template.plot.helpers({
   updatePlot: function() {
 
     if (Template.instance().updatePlot) {
+
       Template.instance().updatePlot(this.values);
     }
 

@@ -2,8 +2,8 @@ Template.registerHelper('allJobs', function() {
   return Jobs.find({},{sort:{startTime:-1}});
 });
 
-Template.registerHelper('streamsForJobId', function(id) {
-  return Streams.find({job_id: id}, {sort:{title:1}});
+Template.registerHelper('streamsForJobId', function(job_id) {
+  return Streams.find({job_id: job_id}, {sort:{title:1}});
 });
 
 Template.registerHelper('isFiltered', function(status) {

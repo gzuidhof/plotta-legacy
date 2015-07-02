@@ -11,12 +11,12 @@ path:
 /api/job/new
 
 params:
-  id: string|int //unique identifier of job
+  job_id: string //identifier for job
   name: string //Name of job
   node: string //Node name
 
 example:
-/api/job/new?id=myJobId&name=AwrooModel&node=zeta
+/api/job/new?job_id=myJobId&name=AwrooModel&node=zeta
 
 ```
 ####Mark job as done
@@ -25,7 +25,7 @@ path:
 /api/job/stop
 
 Params:
-  id: string|int //unique identifier of job
+  job_id: string //identifier for job
 ```
 
 
@@ -35,8 +35,8 @@ path:
 /api/stream/new
 
 Params:
-  id: string|int //unique identifier of stream
-  job_id: string|int //job the stream belongs to
+  stream_id: string //identifier of stream
+  job_id: string //job the stream belongs to
   title: string //Title of plot
   xName: string
   yName: string
@@ -48,8 +48,8 @@ path:
 /api/stream/append
 
 Params:
-  id: string|int //unique identifier of stream
-  job_id: string|int //unique identifier of job
+  stream_id: string //identifier of stream
+  job_id: string //identifier of job
   x: number
   y: number
 ```
