@@ -20,7 +20,7 @@ Template.jobHeader.helpers({
 Template.jobHeader.events({
   'click .toggle-job': function(event, template) {
       var newStatus = Math.abs(template.data.status - 1);
-      var job_id = template.data.job_id;
-      Jobs.update({job_id:job_id}, {$set:{status:newStatus}});
+      var _id = template.data._id;
+      Jobs.update({_id:_id}, {$set:{status:newStatus}});
   }
 });
