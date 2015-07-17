@@ -57,7 +57,7 @@ Router.route('/api/stream/new', { where: 'server' })
     var query = this.request.body
     var stream_id = query.stream_id;
     var job_id = query.job_id;
-    var title = query.title;
+    var name = query.name;
     var xName = query.xName;
     var yName = query.yName;
 
@@ -74,7 +74,7 @@ Router.route('/api/stream/new', { where: 'server' })
     Streams.insert({
         stream_id: stream_id,
         job_id: job_id,
-        title:title,
+        name:name,
         xName:xName,
         yName:yName,
         values: []

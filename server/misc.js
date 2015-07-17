@@ -17,7 +17,7 @@ Meteor.methods({
 
     console.log("Updating stream values done!");
   },
-  
+
   //Used for migrating to new api (with more explicit id names)
   'fixOldIds': function() {
     var jobs = Jobs.find({}).fetch();
@@ -29,7 +29,21 @@ Meteor.methods({
     });
 
     console.log("Updating job ids done!");
+  },
+
+  //Used for migrating to new api (with more explicit title changed to name)
+  'fixTitleToName': function() {
+    var streams = Streams.find({}).fetch();
+    _.each(streams, function(stream) {
+      var id = stream._id;
+
+      Streams.update({_id:id}, {$set: {name: stream.title}});
+      console.log("Updated stream " + stream.name + " of job " +stream.job_id);
+    });
+
+    console.log("Updating stream title to name done!");
   }
+
 
 
 

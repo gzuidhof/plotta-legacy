@@ -28,7 +28,7 @@ Template.graph.onRendered (function() {
 
 
 
-  var title = stream.title || '';
+  var title = stream.name || '';
   var xAxisName = stream.xAxis || '';
   var yAxisName = stream.yAxis || '';
 
