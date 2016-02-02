@@ -2,7 +2,7 @@
 Webserver for live plots of distributed tasks, originally created for viewing progress of multiple nodes concurrently training convolutional neural networks with different parameters.
 
 ### Screenshot
-![Plotta screenshot](https://raw.githubusercontent.com/gzuidhof/plotta/master/screenshot.png)
+![Plotta screenshot](/screenshot.png)
 
 ###Preliminary REST API
 All requests below are POST requests.
